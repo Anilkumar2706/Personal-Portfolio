@@ -1,353 +1,240 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anilkumar Konakanchi — Portfolio</title>
-  <meta name="description" content="Portfolio of Anilkumar Konakanchi — Computer Science , Full Stack Developer, AI/Automation enthusiast, and freelancer.">
-  <meta name="author" content="Anilkumar Konakanchi">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230a84ff'/%3E%3Ctext x='50' y='58' font-size='58' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EA%3C/text%3E%3C/svg%3E">
+  <meta name="description" content="Anilkumar Konakanchi — Java Full Stack Developer portfolio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b1221;
-      --card:#121a2b;
-      --muted:#7a8ca5;
-      --text:#edf2ff;
-      --brand:#0a84ff;
-      --brand-2:#7dd3fc;
-      --ok:#22c55e;
-      --warn:#f59e0b;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-      --radius:18px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:linear-gradient(180deg,#091020, #0b1221 40%, #0c1326);color:var(--text);font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;scroll-behavior:smooth}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{width:min(1100px, 92%);margin:auto}
-    header{position:sticky;top:0;backdrop-filter:saturate(180%) blur(12px);background:rgba(9,16,32,.55);border-bottom:1px solid rgba(255,255,255,.06);z-index:20}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
-    .logo-badge{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow)}
-    .nav-links{display:flex;gap:18px;align-items:center}
-    .nav-links a{padding:8px 10px;border-radius:12px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--text);box-shadow:var(--shadow);text-decoration:none}
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:linear-gradient(135deg,var(--brand),#005eff);border:none}
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;padding:56px 0 22px}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-    h1{font-size:clamp(28px,4vw,44px);margin:0 0 8px}
-    .subtitle{color:var(--muted);font-size:clamp(14px,2.2vw,18px);margin:0 0 18px}
-    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 26px}
-    .badge{padding:8px 12px;border-radius:999px;background:rgba(10,132,255,.15);border:1px solid rgba(125,211,252,.35);font-size:13px}
-    .cta{display:flex;flex-wrap:wrap;gap:12px}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    section{padding:42px 0}
-    section h2{font-size:28px;margin:0 0 18px}
-    .grid{display:grid;gap:18px}
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .grid-2{grid-template-columns:repeat(2,1fr)}
-    .kpis{display:flex;gap:18px;flex-wrap:wrap}
-    .kpi{padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
-    .list{display:grid;gap:12px}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-size:13px;margin:4px 6px 0 0}
-    .project{display:flex;flex-direction:column;gap:10px}
-    .project a.btn{align-self:flex-start}
-    .footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,.06)}
-    .tags{margin-top:6px}
-    .two-col{columns:2;column-gap:18px}
-    .hide-mobile{display:block}
-    .only-mobile{display:none}
-    .contact-form{display:grid;gap:12px}
-    input,textarea{width:100%;padding:12px 14px;border-radius:12px;background:#0a1222;border:1px solid rgba(255,255,255,.12);color:var(--text);outline:none}
-    textarea{min-height:120px;resize:vertical}
-    .note{color:var(--muted);font-size:13px}
-    @media (max-width:880px){
-      .hero{grid-template-columns:1fr}
-      .grid-3{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
-      .hide-mobile{display:none}
-      .only-mobile{display:block}
-      .two-col{columns:1}
-    }
+    :root{--bg:#0b0f17;--card:#101625;--ink:#e6ecff;--muted:#b6c0dc;--brand:#7c9cff;--line:#1b2338;--chip:#0f1a33}
+    *{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;background:linear-gradient(180deg,#0a0e16, #0b1020 40%, #0a0e16);color:var(--ink);line-height:1.6}
+    a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+    .container{width:min(1100px,94vw);margin-inline:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(10,14,22,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.5px}
+    .logo .dot{width:10px;height:10px;border-radius:8px;background:conic-gradient(from 180deg at 50% 50%, #7c9cff, #8fe3ff)}
+    .links{display:flex;gap:18px}
+    .links a{color:var(--muted)}.links a.active{color:var(--ink)}
+    .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;padding:40px 0 24px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+    h1{font-size:40px;line-height:1.15;margin:10px 0 6px}
+    .subtitle{color:var(--muted);font-weight:600}
+    .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{border:1px solid var(--line);background:var(--chip);padding:6px 10px;border-radius:999px;color:#cfe2ff;font-size:13px}
+    section{margin:26px 0}
+    h2{font-size:22px;margin:0 0 12px}
+    .grid{display:grid;gap:12px}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .list{display:grid;gap:10px}
+    .list li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+    .proj{display:flex;justify-content:space-between;gap:12px;align-items:center}
+    .proj a{white-space:nowrap}
+    footer{margin:36px 0 60px;color:var(--muted)}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    input,textarea,button{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#0b1222;color:var(--ink);font:inherit}
+    textarea{min-height:140px;resize:vertical}
+    button{background:linear-gradient(180deg,#7c9cff,#5a7bff);border:0;color:#0b0f17;font-weight:800;cursor:pointer}
+    .success{display:none;padding:12px;border-radius:10px;border:1px solid #214a2e;background:#102417;color:#acf0c1}
+    .hidden{display:none}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid.cols-3{grid-template-columns:1fr}}
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Anilkumar Konakanchi",
-    "jobTitle":"Full Stack Developer, AI/Automation Freelancer",
-    "email":"mailto:anilkonakanchi2706@gmail.com",
-    "telephone":"+917995982418",
-    "url":"",
-    "sameAs":["https://www.linkedin.com/in/anil-konakanchi","https://github.com/anilkonakanchi"],
-    "knowsAbout":["Java","Python","Full Stack Development","SQL","ReactJS","Automation","AI/ML"]
-  }
-  </script>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <div class="logo">
-          <div class="logo-badge">AK</div>
-          <span>Anilkumar Konakanchi</span>
-        </div>
-        <div class="nav-links hide-mobile">
+        <div class="logo"><span class="dot"></span> <span>AK</span></div>
+        <div class="links">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
-          <a href="#services">Services</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#certs">Certifications</a>
           <a href="#education">Education</a>
-          <a href="#contact" class="btn btn-primary">Hire Me</a>
+          <a href="#contact" class="active">Contact</a>
         </div>
-        <a class="btn only-mobile" href="#contact">Hire Me</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <div class="hero-card">
-        <h1>Computer Science  • Full Stack Developer • AI/Automation Freelancer</h1>
-        <p class="subtitle">
-          I build practical software — from full‑stack web apps to automation and AI features — with a focus on clean UI, reliability, and fast delivery.
-        </p>
-        <div class="badges">
-          <span class="badge">Java • Spring Boot</span>
-          <span class="badge">Python • Selenium</span>
-          <span class="badge">JavaScript • React</span>
-          <span class="badge">SQL • SQLite/MySQL</span>
-          <span class="badge">AWS • Power BI</span>
-        </div>
-        <div class="cta">
-          <a class="btn btn-primary" href="#contact">Hire Me for Freelance</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
-          <a class="btn" href="mailto:anilkonakanchi2706@gmail.com?subject=Freelance%20Project%20Inquiry">Email Me</a>
-        </div>
-        <div class="kpis" style="margin-top:18px">
-          <div class="kpi">Location: Gurazala, Andhra Pradesh, India</div>
-          <div class="kpi">Open to: Remote • Contract • Part-time</div>
+    <div class="hero">
+      <div class="card">
+        <div class="subtitle">Computer Science • Java Full Stack • AI/Automation</div>
+        <h1>Anilkumar Konakanchi</h1>
+        <div class="subtitle">I build practical software with clean UI and reliable backends.</div>
+        <div class="chiprow">
+          <span class="chip">Java</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">Python</span>
+          <span class="chip">Selenium</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">React</span>
+          <span class="chip">SQL</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Power BI</span>
         </div>
       </div>
       <div class="card">
-        <h2 style="margin-top:0">What I Do</h2>
-        <ul class="list">
-          <li>Full‑stack web development (Java/Spring Boot, Node.js, React)</li>
-          <li>Automation bots (Selenium, Python/Java) — scraping, data entry, workflow</li>
-          <li>AI & ML features — chatbots, prediction models, resume screeners</li>
-          <li>Data analysis — SQL, Excel, Power BI dashboards</li>
-        </ul>
-        <div class="tags">
-          <span class="pill">Fast delivery</span>
-          <span class="pill">Clean code</span>
-          <span class="pill">Affordable starter pricing</span>
+        <div class="subtitle">Contact</div>
+        <div>Email: anilkonakanchi2706@gmail.com</div>
+        <div>Phone: +91 79959 82418</div>
+        <div>Location: Gurazala, Andhra Pradesh, India</div>
+        <div class="chiprow" style="margin-top:14px">
+          <a class="chip" href="https://www.linkedin.com/in/anil-konakanchi" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="chip" href="https://github.com/anilkonakanchi" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="chip" href="#contact">Say Hello</a>
         </div>
       </div>
-    </section>
+    </div>
 
     <section id="about">
-      <h2>About Me</h2>
+      <h2>About</h2>
       <div class="card">
-        <p>Motivated Computer Science  with hands‑on experience in full‑stack development, AI/ML, and real projects. Skilled in Python, Java, MS Excel, Power BI, and cloud tools like AWS. Strong in problem‑solving, task management, and communication. I enjoy turning ideas into working software that helps people and businesses.</p>
-        <div class="grid grid-2" style="margin-top:10px">
-          <div class="card">
-            <strong>Contact</strong>
-            <div class="list" style="margin-top:10px">
-              <div>Email: <a href="mailto:anilkonakanchi2706@gmail.com">anilkonakanchi2706@gmail.com</a></div>
-              <div>Phone: <a href="tel:+917995982418">+91‑7995982418</a></div>
-              <div>LinkedIn: <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/anil-konakanchi">linkedin.com/in/anil-konakanchi</a></div>
-              <div>GitHub: <a target="_blank" rel="noopener" href="https://github.com/anilkonakanchi">github.com/anilkonakanchi</a></div>
-            </div>
-          </div>
-          <div class="card">
-            <strong>Freelance Status</strong>
-            <p style="margin:8px 0 0">Available for freelance projects. Typical response time: under 24 hours. Happy to sign NDAs.</p>
-            <div class="tags">
-              <span class="pill">Remote work</span>
-              <span class="pill">-friendly rates</span>
-              <span class="pill">Consultation call</span>
-            </div>
-          </div>
-        </div>
+        Motivated CSE graduate with hands‑on work in full‑stack apps, AI/ML features, and automation. Strong with Java, Python, React, SQL, and AWS. I like turning ideas into working products.
       </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <div class="card">
-        <div class="two-col">
-          <div>
-            <strong>Languages</strong>
-            <div class="tags">
-              <span class="pill">Python</span><span class="pill">Java</span><span class="pill">C</span><span class="pill">C++</span><span class="pill">SQL</span>
-            </div>
-          </div>
-          <div>
-            <strong>Web</strong>
-            <div class="tags">
-              <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">ReactJS</span>
-            </div>
-          </div>
-          <div>
-            <strong>Tools</strong>
-            <div class="tags">
-              <span class="pill">VS Code</span><span class="pill">Eclipse</span><span class="pill">Excel</span><span class="pill">Power BI</span><span class="pill">AWS</span>
-            </div>
-          </div>
-          <div>
-            <strong>Soft Skills</strong>
-            <div class="tags">
-              <span class="pill">Communication</span><span class="pill">Problem‑Solving</span><span class="pill">Critical Thinking</span><span class="pill">Teamwork</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
-      <h2>Freelancing Services</h2>
-      <div class="grid grid-3">
+      <div class="grid cols-3">
         <div class="card">
-          <h3 style="margin-top:0">Full‑Stack Web Development</h3>
-          <p>Java/Spring Boot or Node.js backends with clean React/HTML/CSS frontends and SQL databases.</p>
-          <div class="tags"><span class="pill">APIs</span><span class="pill">Auth</span><span class="pill">Deploy</span></div>
+          <div class="subtitle">Languages</div>
+          <ul class="list">
+            <li>Java • Python • C • C++</li>
+            <li>SQL</li>
+          </ul>
         </div>
         <div class="card">
-          <h3 style="margin-top:0">Automation Bots</h3>
-          <p>Selenium and script automation for scraping, form filling, email filtering, and n8n workflows.</p>
-          <div class="tags"><span class="pill">Python</span><span class="pill">Java</span><span class="pill">n8n</span></div>
+          <div class="subtitle">Web</div>
+          <ul class="list">
+            <li>HTML • CSS • JavaScript • React</li>
+            <li>Spring Boot • REST APIs</li>
+          </ul>
         </div>
         <div class="card">
-          <h3 style="margin-top:0">AI & ML Features</h3>
-          <p>Chatbots, prediction models (e.g., salary prediction), and resume screeners integrated into apps.</p>
-          <div class="tags"><span class="pill">ML</span><span class="pill">NLP</span><span class="pill">APIs</span></div>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Data & Dashboards</h3>
-          <p>SQL queries, Excel processing, and Power BI dashboards for business insights.</p>
-          <div class="tags"><span class="pill">SQL</span><span class="pill">Excel</span><span class="pill">Power BI</span></div>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Consulting</h3>
-          <p>Quick audits, bug fixing, and performance tuning for existing codebases.</p>
-          <div class="tags"><span class="pill">Code review</span><span class="pill">Refactor</span></div>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0">Support & Maintenance</h3>
-          <p>Ongoing updates, documentation, and handover with Loom videos if needed.</p>
-          <div class="tags"><span class="pill">Docs</span><span class="pill">Handover</span></div>
+          <div class="subtitle">Tools</div>
+          <ul class="list">
+            <li>VS Code • Eclipse</li>
+            <li>AWS • Power BI</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <div class="grid grid-3">
-        <div class="card project">
-          <h3 style="margin-top:0">HeartBeats — Music Streaming Web App</h3>
-          <p>Full‑stack app using HTML, CSS, JavaScript, Node.js, Express, and SQLite with Google OAuth and YouTube Data API.</p>
-          <a class="btn" href="https://hearttbeats.netlify.app/" target="_blank" rel="noopener">Live Demo</a>
+      <div class="grid cols-2">
+        <div class="card proj">
+          <div>
+            <div class="subtitle">SmartResume</div>
+            <div>Resume builder with templates, Supabase auth, and PDF export.</div>
+          </div>
+          <a href="https://freshersresume.netlify.app/" target="_blank" rel="noreferrer">Live</a>
         </div>
-        <div class="card project">
-          <h3 style="margin-top:0">Salary Prediction (ML)</h3>
-          <p>Compared Random Forest, KNN, SVM, Decision Trees, and Naive Bayes to predict salaries and support HR decisions.</p>
+        <div class="card proj">
+          <div>
+            <div class="subtitle">HeartBeats — Music App</div>
+            <div>Full‑stack music app with OAuth and YouTube Data API.</div>
+          </div>
+          <a href="https://hearttbeats.netlify.app" target="_blank" rel="noreferrer">Live</a>
         </div>
-        <div class="card project">
-          <h3 style="margin-top:0">Cold Storage Booking</h3>
-          <p>Web platform for farmers to manage crop cold storage efficiently with a friendly UI and backend.</p>
+        <div class="card proj">
+          <div>
+            <div class="subtitle">Salary Prediction (ML)</div>
+            <div>Compared classic ML models for salary prediction.</div>
+          </div>
+          <span></span>
+        </div>
+        <div class="card proj">
+          <div>
+            <div class="subtitle">Cold Storage Booking</div>
+            <div>Platform for farmers to manage cold storage slots.</div>
+          </div>
+          <span></span>
         </div>
       </div>
     </section>
 
     <section id="experience">
-      <h2>Experience / Internship</h2>
+      <h2>Experience</h2>
       <div class="card">
-        <strong>Small Talk Technologies — Full Stack Development Internship</strong>
-        <ul class="list" style="margin-top:10px">
-          <li>Developed web apps with front‑end and back‑end technologies</li>
-          <li>Built UIs, APIs, and integrated databases; practiced version control</li>
-          <li>Collaborated on real‑world applications and deployments</li>
+        <div class="subtitle">Small Talk Technologies — Full Stack Intern</div>
+        <ul class="list">
+          <li>Built UIs, APIs, and integrated databases</li>
+          <li>Collaborated on deployments and version control</li>
         </ul>
-      </div>
-    </section>
-
-    <section id="certs">
-      <h2>Certifications</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <ul class="list" style="margin:0">
-            <li>Workshop on Generative AI</li>
-            <li>Java Full Stack — Wipro TalentNext</li>
-            <li>Cambridge English Certification</li>
-          </ul>
-        </div>
-        <div class="card">
-          <ul class="list" style="margin:0">
-            <li>NPTEL Software Testing</li>
-            <li>Web Analytics — Accenture (FutureLearn)</li>
-          </ul>
-        </div>
       </div>
     </section>
 
     <section id="education">
       <h2>Education</h2>
-      <div class="grid grid-3">
+      <div class="grid cols-2">
         <div class="card">
-          <strong>SIMATS (Saveetha Institute of Medical & Technical Sciences)</strong>
-          <div>B.E./B.Tech — CSE (2021–2025)</div>
-          <div>CGPA: 8.4</div>
-          <div>Chennai, Tamil Nadu</div>
+          <div class="subtitle">SIMATS (Saveetha) — B.Tech CSE (2021–2025)</div>
+          <div>CGPA: 8.4 • Chennai, TN</div>
         </div>
         <div class="card">
-          <strong>Narayana Jr College</strong>
-          <div>MPC (+2) — 2019–2021</div>
-          <div>Percentage: 93%</div>
-          <div>Vijayawada, Andhra Pradesh</div>
+          <div class="subtitle">Narayana Jr College — MPC (2019–2021)</div>
+          <div>CGPA: 92.5 • Vijayawada, AP</div>
         </div>
         <div class="card">
-          <strong>Akshara High School</strong>
-          <div>10th Grade — 2018–2019</div>
-          <div>CGPA: 9.5</div>
-          <div>Gurazala, Andhra Pradesh</div>
+          <div class="subtitle">Akshara High School — 10th</div>
+          <div>CGPA: 9.5 • Gurazala, AP</div>
         </div>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <div class="card">
-        <form class="contact-form" onsubmit="return sendMail(event)">
-          <input type="text" id="name" placeholder="Your Name" required>
-          <input type="email" id="email" placeholder="Your Email" required>
-          <textarea id="message" placeholder="Your Message" required></textarea>
-          <button class="btn btn-primary" type="submit">Send Message</button>
-          <div class="note">This demo uses your email app to send the message. Replace with Formspree/Backend later if needed.</div>
-        </form>
-      </div>
+      <div class="success" id="successBox">Thanks, your message was sent.</div>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contactForm">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
+        <div class="contact">
+          <div class="card">
+            <label for="name" class="subtitle">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="card">
+            <label for="email" class="subtitle">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="card" style="grid-column:1/-1">
+            <label for="message" class="subtitle">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
     </section>
+
+    <footer>
+      © <span id="year"></span> Anilkumar Konakanchi • Open to roles
+    </footer>
   </main>
 
-  <footer class="footer container">
-    <div>© <span id="y"></span> Anilkumar Konakanchi — Available for freelance work • <a href="#contact">Get in touch</a></div>
-  </footer>
-
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    function sendMail(e){
+    const y=document.getElementById('year');y.textContent=new Date().getFullYear();
+    const successBox=document.getElementById('successBox');
+    if(window.location.search.includes('success=true')){successBox.style.display='block'}
+    const form=document.getElementById('contactForm');
+    form.addEventListener('submit',async(e)=>{
       e.preventDefault();
-      const n = document.getElementById('name').value.trim();
-      const em = document.getElementById('email').value.trim();
-      const m = document.getElementById('message').value.trim();
-      const subject = encodeURIComponent('Freelance Inquiry from ' + n);
-      const body = encodeURIComponent('Name: ' + n + '\nEmail: ' + em + '\n\n' + m);
-      window.location.href = 'mailto:anilkonakanchi2706@gmail.com?subject=' + subject + '&body=' + body;
-      return false;
-    }
+      const fd=new FormData(form);
+      const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()});
+      if(r.ok){successBox.style.display='block';form.reset();history.replaceState(null,'',window.location.pathname+'?success=true')} else {alert('Failed. Try again.')}
+    });
   </script>
 </body>
 </html>
